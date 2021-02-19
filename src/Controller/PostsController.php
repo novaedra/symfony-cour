@@ -31,6 +31,7 @@ class PostsController extends AbstractController
     public function new(Request $request): Response
     {
         $post = new Posts();
+        $post-> setDate(new \DateTime());
         $form = $this->createForm(PostsType::class, $post);
         $form->handleRequest($request);
 

@@ -11,7 +11,7 @@
                 <th>Id</th>
                 <th>Title</th>
                 <th>Body</th>
-                <th>Data</th>
+                <th>Date</th>
                 <th>actions</th>
             </tr>
         </thead>
@@ -21,7 +21,7 @@
                 <td>{{ post.id }}</td>
                 <td>{{ post.title }}</td>
                 <td>{{ post.body }}</td>
-                <td>{{ post.data ? post.data|date('Y-m-d H:i:s') : '' }}</td>
+                <td>{{ post.date ? post.date|date('Y-m-d H:i:s') : '' }}</td>
                 <td>
                     <a href="{{ path('posts_show', {'id': post.id}) }}">show</a>
                     <a href="{{ path('posts_edit', {'id': post.id}) }}">edit</a>

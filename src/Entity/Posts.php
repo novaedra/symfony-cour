@@ -30,10 +30,11 @@ class Posts
     /**
      * @ORM\Column(type="datetime")
      */
-    private $data;
+    private $date;
 
     /**
      * @ORM\ManyToOne(targetEntity=User::class, inversedBy="posts")
+     * @ORM\JoinColumn(nullable=false)
      */
     private $user_id;
 
@@ -66,14 +67,14 @@ class Posts
         return $this;
     }
 
-    public function getData(): ?\DateTimeInterface
+    public function getDate(): ?\DateTimeInterface
     {
-        return $this->data;
+        return $this->date;
     }
 
-    public function setData(\DateTimeInterface $data): self
+    public function setDate(\DateTimeInterface $date): self
     {
-        $this->data = $data;
+        $this->date = $date;
 
         return $this;
     }

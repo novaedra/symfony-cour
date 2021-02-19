@@ -80,4 +80,12 @@ class User
 
         return $this;
     }
+
+    public function __toString(): string
+    {
+        if(is_null($this->id)) {
+            return 'NULL';
+        }
+        return $this->id;
+    }
 }
